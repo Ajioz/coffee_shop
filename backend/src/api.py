@@ -37,7 +37,7 @@ def index():
         or appropriate status code indicating reason for failure
 '''
 
-@app.route('/drinks/', methods=['GET'])
+@app.route('/drinks', methods=['GET'])
 def get_all_drinks():
     get_drink = Drink.query.all()
     return jsonify({
@@ -78,7 +78,7 @@ def get_drink_details(auth):
 '''
 
 
-@app.route('/drinks/', methods=['POST'])
+@app.route('/drinks', methods=['POST'])
 @requires_auth('post:drinks')
 def create_drink(auth):
 
